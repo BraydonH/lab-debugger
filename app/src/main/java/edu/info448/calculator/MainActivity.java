@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    compute(Calculator.Operator.MUL);
+                    compute(Calculator.Operator.DIV);
                 } catch (IllegalArgumentException iae) {
                     Log.e(TAG, "IllegalArgumentException", iae);
                     mResultTextView.setText(getString(R.string.computationError));
@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
                 result = String.valueOf(mCalculator.add(operand));
                 break;
             case SUB:
-                result = getString(R.string.computationError);
+                result = String.valueOf(mCalculator.sub(operand));
                 break;
             case DIV:
                 result = String.valueOf(mCalculator.div(operand));
